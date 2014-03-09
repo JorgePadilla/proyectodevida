@@ -1,0 +1,65 @@
+<h1>Productos en tránsito</h1>
+
+</br>
+
+<%= form_tag buscartransito_path do %>
+<table>
+  <tr>
+    <td>
+      <b>Asesor:</b>
+    </td>
+    <td>
+      <%= collection_select(:asesor,@asdf, Asesor.all, :nombre, :nombre,{ :include_blank => true }) %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Libro:</b>
+    </td>
+    <td>
+      <%= collection_select(:inventario,@asdf, Inventario.all, :nombre, :nombre,{ :include_blank => true }) %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <%= submit_tag "Buscar" %>
+    </td>
+  </tr>
+</table>
+<%end%>
+
+</br>
+
+<table>
+  <tr>
+    <th>Producto en inventario</th>
+    <th>Asesor</th>
+    <th>Cantidad</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @transitos.each do |transito| %>
+  <tr>
+    <td><%= transito.inventario.nombre %></td>
+    <td><%= link_to transito.asesor.nombre, transito.asesor %></td>
+    <td><%= transito.cantidad %></td>
+    <td><%= link_to 'Mostrar', transito %></td>
+    <td><%= link_to 'Editar', edit_transito_path(transito) %></td>
+    <td><%= link_to 'Eliminar', transito, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Agregar producto', new_transito_path %>
+<br/>
+<br/>
+<%= link_to 'Listado de notas de entrega', nota_entregas_path %>
+<br/>
+<br/>
+<%= link_to 'Listado de notas de devolucion', nota_devolucions_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  identidad: MyString
+  moderador_id: 1
+  comision_credito: 1.5
+  comision_contado_empresa: 1.5
+  comision_contado_asesor: 1.5
+
+two:
+  nombre: MyString
+  identidad: MyString
+  moderador_id: 1
+  comision_credito: 1.5
+  comision_contado_empresa: 1.5
+  comision_contado_asesor: 1.5

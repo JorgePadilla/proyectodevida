@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  password_hash: MyString
+  password_salt: MyString
+  rol_id: 1
+
+two:
+  nombre: MyString
+  password_hash: MyString
+  password_salt: MyString
+  rol_id: 1

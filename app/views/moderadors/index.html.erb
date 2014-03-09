@@ -1,0 +1,29 @@
+<h1>Moderadores</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Coordinador</th>
+    <th>Comision credito(%)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @moderadors.each do |moderador| %>
+  <tr>
+    <td><%= moderador.nombre %></td>
+    <td><%= moderador.coordinador_id %></td>
+    <td><%= moderador.comision_credito %></td>
+    <td><%= link_to 'Mostrar', moderador %></td>
+    <td><%= link_to 'Editar', edit_moderador_path(moderador) %></td>
+    <td><%= link_to 'Eliminar', moderador, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Moderador', new_moderador_path %>

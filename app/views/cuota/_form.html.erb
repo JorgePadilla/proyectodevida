@@ -1,0 +1,141 @@
+<%= form_for(@cuotum) do |f| %>
+  <% if @cuotum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cuotum.errors.count, "error") %> prohibited this cuotum from being saved:</h2>
+
+      <ul>
+      <% @cuotum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table border="1">
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Número de Cuota" %><br />
+    <%= f.select :num_cuota , [1,2,3,4,5,6] %>
+  </div>
+</tr> 
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label "Valor Crédito" %><br />
+    <%= @cuotum.pedido.valor_credito %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Valor Cuota" %><br />
+    <%= getValorCuota @cuotum.pedido_id %>
+    </div>
+  </td>
+  <td>
+    Saldo<br />
+    <%= getSaldo(@cuotum.pedido.id, @cuotum.num_cuota) %>
+  </td>
+  </td>	
+</tr>
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label "Número Depósito" %><br />
+    <%= f.text_field :num_deposito %>
+    </div>
+  </td>
+  
+  <td>
+    <div class="field">
+    <%= f.label "Valor Depósito" %><br />
+    <%= f.number_field :valor_deposito , :min=>0 %>
+    </div>
+  </td>
+</tr> 
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label "Mora" %><br />
+    <% if soyAdministrador || soyAsistente %>
+      <%= f.number_field :mora , :min => 0 %>
+    <% else %>
+      <%= @cuotum.mora %>
+    <% end %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Descuento" %><br />
+    <% if soyAdministrador || soyAsistente %>
+      <%= f.number_field :descuento , :min=>0%>
+    <% else %>
+      <%= @cuotum.descuento %>
+    <% end %>
+    </div>
+  </td>
+</tr>
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label :estado %><br />
+    <%= f.select :estado , ["Pagado","Pendiente"] %>
+    </div>
+  </td>
+<% if soyAsistente || soyAdministrador %>
+  <td>
+    <div class="field">
+    <%= f.label "Gestor de Cobro" %><br />
+    <%= f.collection_select :usuario_id, usuariosCobranza, :id, :nombre %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Información Revisada" %><br />
+    <%= f.check_box :revisado %>
+  </div>
+  </td>
+<% end %>
+</tr>
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label :observaciones %><br />
+    <%= f.text_area :observaciones,:size => "40x10" %>
+  </div>
+  </td>	
+
+<!--
+  <td>
+    <div class="field">
+    <%= f.label "Número de Pedido" %><br />
+    <% @cuotum.pedido.numero_pedido %>
+    <%= f.collection_select :pedido_id,Pedido.all,:id,:numero_pedido %>
+  </div>
+  </td>
+-->
+
+</tr>
+
+<tr>
+  <td>
+   <div class="actions">
+    <%= f.submit %>
+  </div>
+  </td>
+</tr> 
+</table>
+
+<% end %>

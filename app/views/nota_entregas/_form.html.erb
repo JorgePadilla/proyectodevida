@@ -1,0 +1,33 @@
+<%= form_for(@nota_entrega) do |f| %>
+  <% if @nota_entrega.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nota_entrega.errors.count, "error") %> prohibited this nota_entrega from being saved:</h2>
+
+      <ul>
+      <% @nota_entrega.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :transito_id %><br />
+    <%= f.collection_select :transito_id, Transito.all, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br />
+    <%= f.number_field :cantidad %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,45 @@
+<%= form_for(@entrada_inventario) do |f| %>
+  <% if @entrada_inventario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrada_inventario.errors.count, "error") %> prohibited this entrada_inventario from being saved:</h2>
+
+      <ul>
+      <% @entrada_inventario.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :inventario_id %><br />
+		<%= f.collection_select :inventario_id, Inventario.all, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :proveedor %><br />
+    <%= f.text_field :proveedor %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br />
+    <%= f.number_field :cantidad , :min=>0, :value=>1 %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_unitario %><br />
+    <%= f.text_field :valor_unitario %>
+  </div>
+  <div class="field">
+    <%= f.label :valor_unitario_dolares %><br />
+    <%= f.text_field :valor_unitario_dolares %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

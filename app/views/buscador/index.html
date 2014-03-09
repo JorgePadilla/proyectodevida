@@ -1,0 +1,19 @@
+<h1>Buscador</h1>
+<br/>
+
+<input id="test"></input>
+
+<p id="probando" style="display:none"></p>
+
+
+<%= link_to 'buscarrr', buscar_path, :confirm => 'You sure you wanna update?', :remote => true %>
+
+
+<%= @xD %>
+
+<%= form_tag buscar_path, :method => :get, :remote => true do %>
+  <div class="field">
+    <%= text_field_tag :nombre, params[:nombre] %>
+  </div>
+  <%= submit_tag "Buscar" %>
+<%end%>

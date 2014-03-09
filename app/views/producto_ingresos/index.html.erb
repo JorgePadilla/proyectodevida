@@ -1,0 +1,31 @@
+<h1>Listing producto_ingresos</h1>
+
+<table>
+  <tr>
+    <th>Producto</th>
+    <th>Fecha ingreso</th>
+    <th>Documento ingreso</th>
+    <th>Cantidad ingreso</th>
+    <th>Valor producto</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @producto_ingresos.each do |producto_ingreso| %>
+  <tr>
+    <td><%= producto_ingreso.producto_id %></td>
+    <td><%= producto_ingreso.fecha_ingreso %></td>
+    <td><%= producto_ingreso.documento_ingreso %></td>
+    <td><%= producto_ingreso.cantidad_ingreso %></td>
+    <td><%= producto_ingreso.valor_producto %></td>
+    <td><%= link_to 'Show', producto_ingreso %></td>
+    <td><%= link_to 'Edit', edit_producto_ingreso_path(producto_ingreso) %></td>
+    <td><%= link_to 'Destroy', producto_ingreso, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Producto ingreso', new_producto_ingreso_path %>

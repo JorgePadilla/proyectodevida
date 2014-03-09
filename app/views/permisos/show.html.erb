@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Acesso:</b>
+  <%= @permiso.acesso %>
+</p>
+
+<p>
+  <b>Tipo acesso:</b>
+  <%= @permiso.tipo_acesso %>
+</p>
+
+
+<%= link_to 'Editar', edit_permiso_path(@permiso) %> |
+<%= link_to_function "Atrás", "history.back()" %>

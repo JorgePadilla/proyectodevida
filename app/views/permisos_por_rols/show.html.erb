@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rol:</b>
+  <%= @permisos_por_rol.rol_id %>
+</p>
+
+<p>
+  <b>Permiso:</b>
+  <%= @permisos_por_rol.permiso_id %>
+</p>
+
+
+<%= link_to 'Editar', edit_permisos_por_rol_path(@permisos_por_rol) %> |
+<%= link_to_function "Atrás", "history.back()" %>

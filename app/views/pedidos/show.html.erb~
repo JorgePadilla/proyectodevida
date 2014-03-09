@@ -1,0 +1,417 @@
+<p id="notice"><%= notice %></p>
+
+
+<table>
+
+  <tr>
+    <td>
+      <p>
+        <b>Número de pedido:</b><br/>
+        <%= @pedido.numero_pedido %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Asesor:</b><br/>
+        <%= link_to @pedido.asesor.nombre,@pedido.asesor %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Evento:</b><br/>
+        <%= @pedido.evento %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Ciudad:</b><br/>
+        <%= @pedido.ciudad %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Fecha evento:</b><br/>
+        <%= @pedido.fecha_evento %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Nombre cliente:</b><br/>
+        <%= @pedido.nombre_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Identidad cliente:</b><br/>
+        <%= @pedido.identidad_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono cliente:</b><br/>
+        <%= @pedido.telefono_cliente %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Celular cliente:</b><br/>
+        <%= @pedido.celular_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Correo electronico:</b><br/>
+        <%= @pedido.correo_electronico %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Direccion cliente:</b><br/>
+        <%= @pedido.direccion_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Ciudad cliente:</b><br/>
+        <%= @pedido.ciudad_cliente %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Departamento cliente:</b><br/>
+        <%= @pedido.departamento_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Trabajo cliente:</b><br/>
+        <%= @pedido.trabajo_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Cargo cliente:</b><br/>
+        <%= @pedido.cargo_cliente %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono trabajo:</b><br/>
+        <%= @pedido.telefono_trabajo %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Inicio hora contacto:</b><br/>
+        <%= @pedido.inicio_hora_contacto %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Fin hora contacto:</b><br/>
+        <%= @pedido.fin_hora_contacto %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Conyugue:</b><br/>
+        <%= @pedido.conyugue %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono Conyugue:</b><br/>
+        <%= @pedido.telefono_conyugue %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Referencia:</b><br/>
+        <%= @pedido.referencia %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono referencia:</b><br/>
+        <%= @pedido.telefono_referencia %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Referencia 2:</b><br/>
+        <%= @pedido.referencia2 %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Telefono referencia 2:</b><br/>
+        <%= @pedido.telefono_referencia2 %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Alumno:</b><br/>
+        <%= @pedido.alumno %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Grado:</b><br/>
+        <%= @pedido.grado %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Jornada:</b><br/>
+        <%= @pedido.jornada %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Valor credito:</b><br/>
+        <%= @pedido.valor_credito %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Descuento:</b><br/>
+        <%= @pedido.descuento %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Mora:</b><br/>
+        <%= @pedido.mora %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Abono inicial:</b><br/>
+        <%= @pedido.abono_inicial %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Numero cuotas:</b><br/>
+        <%= @pedido.numero_cuotas %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+        <b>Tipo de pago:</b><br/>
+        <%= @pedido.tipo_pago %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Fecha inicio pago:</b><br/>
+        <%= @pedido.fecha_inicio_pago %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Fecha ingreso:</b><br/>
+        <%= @pedido.fecha_ingreso %>
+      </p>
+    </td>
+  </tr>
+
+<tr>
+    <td>
+      <p>
+        <b>RVI:</b><br/>
+        <%= @pedido.rvi %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Número días de descuento:</b><br/>
+        <%= @pedido.num_dias_descuento %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+	<b>Número días de Mora:</b><br/>
+        <%= @pedido.dias_mora %>
+      </p>
+    </td>
+  </tr>
+
+<tr>
+    <td>
+      <p>
+        <b>RVI:</b><br/>
+        <%= @pedido.rvi %>
+      </p>
+    </td>
+</tr>
+
+</table>
+
+<%= link_to 'Editar', edit_pedido_path(@pedido) %> 
+
+<br/>
+<br/>
+
+<!-- Mostrar productos de este cliente -->
+
+
+
+<h1>Productos</h1>
+
+</br>
+
+<table id="producto_pedido_tabla">
+  <tr>
+    <th>Producto</th>
+    <th>Pedido</th>
+    <th>Cantidad</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pedido.producto_pedidos.each do |producto_pedido| %>
+  <tr>
+    <td><%= producto_pedido.producto.nombre %></td>
+    <td><%= producto_pedido.pedido_id %></td>
+    <td><%= producto_pedido.cantidad %></td>
+    <td><%= link_to 'Mostrar', producto_pedido %></td>
+    <td><%= link_to 'Editar', edit_producto_pedido_path(producto_pedido) %></td>
+    <td><%= link_to 'Eliminar', producto_pedido, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<!---->
+
+
+
+
+<!-- Form para agregar un nuevo producto -->
+
+<% if soyAdministrador || soyReferenciacion %>
+
+</br>
+</br>
+<h1>Agregar nuevo producto</h1>
+</br>
+<% producto_pedido=ProductoPedido.new %>
+
+<%= form_for(producto_pedido,remote: true) do |f| %>
+  <% if producto_pedido.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(producto_pedido.errors.count, "error") %> prohibited this producto_pedido from being saved:</h2>
+
+      <ul>
+      <% producto_pedido.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :producto_id %><br />
+    <%= f.collection_select :producto_id, Producto.all, :id, :nombre %>
+  </div>
+  <div class="field" style="display:none">
+    <%= f.label :pedido_id %><br />
+    <%= f.number_field :pedido_id, :value => @pedido.id %>
+  </div>
+  <div class="field">
+    <%= f.label :cantidad %><br />
+    <%= f.number_field :cantidad, :min=>0, :value=>1 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</br>
+</br>
+
+
+<%end%>
+
+<br/>
+
+<h1>Cuotas</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Estado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% Cuotum.where(:pedido_id=>@pedido.id).each do |cuotum| %>
+  <tr>
+    <td><%= cuotum.estado %></td>
+    <td><%= link_to 'Mostrar', cuotum %></td>
+    <%if soyCobranza || soyAdministrador%>
+    <td><%= link_to 'Editar', edit_cuotum_path(cuotum) %></td>
+    <%end%>
+    <%if soyAdministrador%>
+    <td><%= link_to 'Eliminar', cuotum, confirm: 'Esta seguro?', method: :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+
+<%= link_to_function "Atrás", "history.back()" %>

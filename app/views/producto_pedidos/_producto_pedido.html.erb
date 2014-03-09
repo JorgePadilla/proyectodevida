@@ -1,0 +1,8 @@
+  <tr id ="pr12" style="display:none">
+    <td><%= @producto_pedido.producto.nombre %></td>
+    <td><%= @producto_pedido.pedido_id %></td>
+    <td><%= @producto_pedido.cantidad %></td>
+    <td><%= link_to 'Mostrar', producto_pedido %></td>
+    <td><%= link_to 'Editar', edit_producto_pedido_path(producto_pedido) %></td>
+    <td><%= link_to 'Eliminar', producto_pedido, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>

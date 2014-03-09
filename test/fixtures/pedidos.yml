@@ -1,0 +1,65 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  asesor_id: 1
+  codificador: MyString
+  evento: MyString
+  ciudad: MyString
+  fecha_pedido: 2012-05-31
+  nombre_cliente: MyString
+  identidad_cliente: MyString
+  telefono_cliente: MyString
+  celular_cliente: MyString
+  correo_electronico: MyString
+  direccion_cliente: MyString
+  ciudad_cliente: MyString
+  departamento_cliente: MyString
+  trabajo_cliente: MyString
+  cargo_cliente: MyString
+  telefono_trabajo: MyString
+  inicio_hora_contacto: 2012-05-31 11:59:54
+  fin_hora_contacto: 2012-05-31 11:59:54
+  conyugue: MyString
+  referencia: MyString
+  telefono_referencia: MyString
+  alumno: MyString
+  grado: MyString
+  jornada: MyString
+  valor_credito: 1.5
+  abono_inicial: 1.5
+  numero_cuotas: 1
+  valor_cuota: 1.5
+  fecha_inicio_pago: 2012-05-31
+  fecha_fin_pago: 2012-05-31
+
+two:
+  asesor_id: 1
+  codificador: MyString
+  evento: MyString
+  ciudad: MyString
+  fecha_pedido: 2012-05-31
+  nombre_cliente: MyString
+  identidad_cliente: MyString
+  telefono_cliente: MyString
+  celular_cliente: MyString
+  correo_electronico: MyString
+  direccion_cliente: MyString
+  ciudad_cliente: MyString
+  departamento_cliente: MyString
+  trabajo_cliente: MyString
+  cargo_cliente: MyString
+  telefono_trabajo: MyString
+  inicio_hora_contacto: 2012-05-31 11:59:54
+  fin_hora_contacto: 2012-05-31 11:59:54
+  conyugue: MyString
+  referencia: MyString
+  telefono_referencia: MyString
+  alumno: MyString
+  grado: MyString
+  jornada: MyString
+  valor_credito: 1.5
+  abono_inicial: 1.5
+  numero_cuotas: 1
+  valor_cuota: 1.5
+  fecha_inicio_pago: 2012-05-31
+  fecha_fin_pago: 2012-05-31

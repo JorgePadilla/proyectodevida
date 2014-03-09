@@ -1,0 +1,30 @@
+<h1>Productos en inventario</h1>
+
+</br>
+
+<table>
+  <tr>
+    <th>Producto</th>
+    <th>Cantidad</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @inventarios.each do |inventario| %>
+  <tr>
+    <td><%= inventario.producto.nombre %></td>
+    <td><%= inventario.cantidad %></td>
+    <td><%= link_to 'Mostrar', inventario %></td>
+    <td><%= link_to 'Editar', edit_inventario_path(inventario) %></td>
+    <td><%= link_to 'Eliminar', inventario, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Agregar producto', new_inventario_path %>
+<br/>
+<br/>
+<%= link_to 'Listado de entradas', entrada_inventarios_path %>

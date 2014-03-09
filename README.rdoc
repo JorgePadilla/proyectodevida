@@ -1,0 +1,6 @@
+Pequeños TODOs:
+*Hacer movimientos de inventario con pedidos e ingresos de productos
+*Validar los permisos en el server-side
+*Preguntar si solo el administrador puede manejar el inventario
+*Terminar el buscador
+*Agregar cuotas automaticamente al agregar pedido

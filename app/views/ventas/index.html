@@ -1,0 +1,159 @@
+<h1>Gerente Comercial</h1>
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Comision credito</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% GerenteComercial.all.each do |gerente_comercial| %>
+  <tr>
+    <td><%= gerente_comercial.nombre %></td>
+    <td><%= gerente_comercial.comision_credito %></td>
+    <td><%= link_to 'Mostrar', gerente_comercial %></td>
+    <td><%= link_to 'Editar', edit_gerente_comercial_path(gerente_comercial) %></td>
+    <td><%= link_to 'Eliminar', gerente_comercial, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo gerente comercial', new_gerente_comercial_path %>
+<br/><br/>
+
+<h1>Director Comercial</h1>
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Gerente comercial</th>
+    <th>Comision credito</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% DirectorComercial.all.each do |director_comercial| %>
+  <tr>
+    <td><%= director_comercial.nombre %></td>
+    <td><%= director_comercial.gerente_comercial.nombre %></td>
+    <td><%= director_comercial.comision_credito %></td>
+    <td><%= link_to 'Mostrar', director_comercial %></td>
+    <td><%= link_to 'Editar', edit_director_comercial_path(director_comercial) %></td>
+    <td><%= link_to 'Eliminar', director_comercial, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo director comercial', new_director_comercial_path %>
+
+<br/><br/>
+
+<h1>Coordinadores</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Director comercial</th>
+    <th>Comision credito</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% Coordinador.all.each do |coordinador| %>
+  <tr>
+    <td><%= coordinador.nombre %></td>
+    <td><%= coordinador.director_comercial.nombre %></td>
+    <td><%= coordinador.comision_credito %></td>
+    <td><%= link_to 'Mostrar', coordinador %></td>
+    <td><%= link_to 'Editar', edit_coordinador_path(coordinador) %></td>
+    <td><%= link_to 'Eliminar', coordinador, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo coordinador', new_coordinador_path %>
+
+<br/><br/>
+
+<h1>Moderadores</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Coordinador</th>
+    <th>Comision credito</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% Moderador.all.each do |moderador| %>
+  <tr>
+    <td><%= moderador.nombre %></td>
+    <td><%= moderador.coordinador.nombre %></td>
+    <td><%= moderador.comision_credito %></td>
+    <td><%= link_to 'Mostrar', moderador %></td>
+    <td><%= link_to 'Editar', edit_moderador_path(moderador) %></td>
+    <td><%= link_to 'Eliminar', moderador, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo moderador', new_moderador_path %>
+
+<br/><br/>
+
+
+<h1>Asesores</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Identidad</th>
+    <th>Moderador</th>
+    <th>Comision credito</th>
+    <th>Comision contado empresa</th>
+    <th>Comision contado asesor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% Asesor.all.each do |asesor| %>
+  <tr>
+    <td><%= asesor.nombre %></td>
+    <td><%= asesor.identidad %></td>
+    <td><%= asesor.moderador.nombre %></td>
+    <td><%= asesor.comision_credito %></td>
+    <td><%= asesor.comision_contado_empresa %></td>
+    <td><%= asesor.comision_contado_asesor %></td>
+    <td><%= link_to 'Mostrar', asesor %></td>
+    <td><%= link_to 'Editar', edit_asesor_path(asesor) %></td>
+    <td><%= link_to 'Eliminar', asesor, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'nuevo asesor', new_asesor_path %>

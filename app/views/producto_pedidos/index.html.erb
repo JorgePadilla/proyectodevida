@@ -1,0 +1,29 @@
+<h1>Productos pedidos</h1>
+
+</br>
+
+<table>
+  <tr>
+    <th>Producto</th>
+    <th>Pedido</th>
+    <th>Cantidad</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @producto_pedidos.each do |producto_pedido| %>
+  <tr>
+    <td><%= link_to producto_pedido.producto.nombre, producto_pedido.producto %></td>
+    <td><%= producto_pedido.pedido_id %></td>
+    <td><%= producto_pedido.cantidad %></td>
+    <td><%= link_to 'Mostrar', producto_pedido %></td>
+    <td><%= link_to 'Editar', edit_producto_pedido_path(producto_pedido) %></td>
+    <td><%= link_to 'Eliminar', producto_pedido, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo producto pedido', new_producto_pedido_path %>

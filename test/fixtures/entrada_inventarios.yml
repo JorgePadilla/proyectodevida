@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numero: MyString
+  fecha: 2012-10-26
+  inventario_id: 1
+  proveedor: MyString
+  cantidad: 1
+  valor_unitario: 1.5
+
+two:
+  numero: MyString
+  fecha: 2012-10-26
+  inventario_id: 1
+  proveedor: MyString
+  cantidad: 1
+  valor_unitario: 1.5

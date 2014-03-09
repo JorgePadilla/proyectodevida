@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @coordinador.nombre %>
+</p>
+
+<p>
+  <b>Director comercial:</b>
+  <%= @coordinador.director_comercial_id %>
+</p>
+
+<p>
+  <b>Comision credito(%):</b>
+  <%= @coordinador.comision_credito %>
+</p>
+
+
+<%= link_to 'Editar', edit_coordinador_path(@coordinador) %> |
+<%= link_to 'Atrás', coordinadors_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fecha: 2012-10-26
+  numero: MyString
+  transito_id: 1
+  cantidad: 1
+
+two:
+  fecha: 2012-10-26
+  numero: MyString
+  transito_id: 1
+  cantidad: 1

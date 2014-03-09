@@ -1,0 +1,29 @@
+<h1>Director Comercial</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Gerente comercial</th>
+    <th>Comision credito(%)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @director_comercials.each do |director_comercial| %>
+  <tr>
+    <td><%= director_comercial.nombre %></td>
+    <td><%= director_comercial.gerente_comercial_id %></td>
+    <td><%= director_comercial.comision_credito %></td>
+    <td><%= link_to 'Mostrar', director_comercial %></td>
+    <td><%= link_to 'Editar', edit_director_comercial_path(director_comercial) %></td>
+    <td><%= link_to 'Eliminar', director_comercial, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Director comercial', new_director_comercial_path %>

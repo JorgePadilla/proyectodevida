@@ -1,0 +1,137 @@
+<h1>Listado de pedidos</h1>
+
+</br>
+
+<%= form_tag buscar_path do %>
+<table>
+  <tr>
+    <td>
+      <b>Fecha de inicio:</b>
+    </td>
+    <td>
+      <%= select( "anio_inicio", params[:anio_inicio],["2010","2011","2012","2013","2014","2015","2016"]) %>
+      <%= select( "mes_inicio", params[:mes_inicio],["01","02","03","04","05","06","07","08","09","10","11","12"]) %>
+      <%= select( "dia_inicio", params[:dia_inicio],["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]) %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Fecha final:</b>
+    </td>
+    <td>
+      <%= select( "anio_final", params[:anio_inicio],["2010","2011","2012","2013","2014","2015","2016"]) %>
+      <%= select( "mes_final", params[:mes_inicio],["01","02","03","04","05","06","07","08","09","10","11","12"]) %>
+      <%= select( "dia_final", params[:dia_inicio],["01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"])
+%>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Nombre:</b>
+    </td>
+    <td>
+      <%= text_field_tag :nombre_cliente, params[:nombre_cliente] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Numero de pedido:</b>
+    </td>
+    <td>
+      <%= text_field_tag :numero_pedido, params[:numero_pedido] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>RVI:</b>
+    </td>
+    <td>
+      <%= text_field_tag :rvi, params[:rvi] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asesor:</b>
+    </td>
+    <td>
+      <%= text_field_tag :asesor, params[:asesor] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Estado:</b>
+    </td>
+    <td>
+      <%= text_field_tag :estado, params[:estado] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Identidad:</b>
+    </td>
+    <td>
+      <%= text_field_tag :identidad_cliente, params[:identidad_cliente] %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <%= submit_tag "Buscar" %>
+    </td>
+  </tr>
+</table>
+<%end%>
+
+</br>
+</br>
+
+#<td><%= Pedido.all[0].fecha_inicio_pago.year %></td>
+
+#<p id="probando" style="display:none"></p>
+
+<table>
+  <tr>
+    <th>Asesor</th>
+    <th>Evento</th>
+    <th>Ciudad</th>
+    <th>Fecha evento</th>
+    <th>Nombre cliente</th>
+    <th>Valor credito</th>
+    <th>Abono inicial</th>
+    <th>Numero cuotas</th>
+    <th>Fecha inicio pago</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pedidos.each do |pedido| %>
+  <tr>
+    <td><%= link_to pedido.asesor.nombre,pedido.asesor %></td>
+    <td><%= pedido.evento %></td>
+    <td><%= pedido.ciudad %></td>
+    <td><%= pedido.fecha_evento %></td>
+    <td><%= pedido.nombre_cliente %></td>
+    <td><%= pedido.valor_credito %></td>
+    <td><%= pedido.abono_inicial %></td>
+    <td><%= pedido.numero_cuotas %></td>
+    <td><%= pedido.fecha_inicio_pago %></td>
+    <td><%= link_to 'Mostrar', pedido %></td>
+    <%if soyAdministrador %>
+    <td><%= link_to 'Editar', edit_pedido_path(pedido) %></td>
+    <td><%= link_to 'Eliminar', pedido, confirm: 'Esta seguro?', method: :delete %></td>
+    <%end%>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Pedido', new_pedido_path %>

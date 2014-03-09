@@ -1,0 +1,29 @@
+<%= form_for(@moderador) do |f| %>
+  <% if @moderador.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@moderador.errors.count, "error") %> prohibited this moderador from being saved:</h2>
+
+      <ul>
+      <% @moderador.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :coordinador_id %><br />
+    <%= f.collection_select :coordinador_id, Coordinador.all, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :comision_credito %>(%)<br />
+    <%= f.text_field :comision_credito %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

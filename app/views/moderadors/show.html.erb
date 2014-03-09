@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @moderador.nombre %>
+</p>
+
+<p>
+  <b>Coordinador:</b>
+  <%= @moderador.coordinador_id %>
+</p>
+
+<p>
+  <b>Comision credito(%):</b>
+  <%= @moderador.comision_credito %>
+</p>
+
+
+<%= link_to 'Editar', edit_moderador_path(@moderador) %> |
+<%= link_to 'Atrás', moderadors_path %>

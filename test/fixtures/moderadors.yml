@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  coordinador_id: 1
+  comision_credito: 1.5
+
+two:
+  nombre: MyString
+  coordinador_id: 1
+  comision_credito: 1.5

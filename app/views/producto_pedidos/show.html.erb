@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Producto:</b>
+  <%= @producto_pedido.producto_id %>
+</p>
+
+<p>
+  <b>Pedido:</b>
+  <%= @producto_pedido.pedido_id %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @producto_pedido.cantidad %>
+</p>
+
+
+<%= link_to 'Editar', edit_producto_pedido_path(@producto_pedido) %> |
+<%= link_to_function "Atrás", "history.back()" %>

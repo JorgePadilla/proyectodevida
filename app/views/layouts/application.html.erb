@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proyecto de Vida</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <link href="/style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+
+
+<body>
+
+<!--
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+-->
+
+
+<div id="header">
+	<div id="menu">
+		<% if current_user %>    
+		<ul>
+
+			<li class="current_page_item"><a href="/">Inicio</a></li>
+			<% if soyAdministrador %>
+			<li><%= link_to "Nuevo usuario", sign_up_path %></li>
+			<% end %>
+			<li><%= link_to "Cerrar sesión", log_out_path %></li>
+		</ul>
+		<% else %>
+		<ul>
+
+			<li class="current_page_item"><a href="/">Inicio</a></li>
+			<li><%= link_to "Iniciar sesión", log_in_path %></li>
+		</ul>
+		<% end %>
+	</div>
+	<!-- end #menu -->
+	<div id="logo">
+		<h1><a href="/">Proyecto de Vida </a></h1>
+		<% if current_user %>
+			<h2>Bienvenido <%= current_user.nombre %>.</h2>
+		<% else %>
+			<h2>Favor ingresar una nueva sesión.</h2>
+		<% end %>
+	</div>
+	<hr />
+</div>
+<!-- end #header -->
+<!-- end #header-wrapper -->
+<!-- end #logo -->
+<div id="page">
+	<div id="page-bgtop">
+		<div id="page-bgbtm">
+			<div id="content">
+				<div class="post">
+					<%= yield %>
+
+<!--
+					<h2 class="title">Titulo</h2>
+					<div class="entry">
+						<p>texto</p>
+					</div>
+					<div><a href="#" class="links">Submit</a></div>
+-->
+				</div>
+			</div>
+			<!-- end #content -->
+			<% if current_user %>
+			<% if soyAdministrador %>
+			<div id="sidebar">
+				<ul>
+					<li>
+						<h2>Menú</h2>
+						<ul>
+							<li><%= link_to "Pedidos", pedidos_path %></li>
+							<li><%= link_to "Inventario", inventarios_path %></li>
+							<li><%= link_to "Entrada a inventario", new_entrada_inventario_path %></li>
+							<li><%= link_to "Tránsito", transitos_path %></li>
+							<li><%= link_to "Nota de entrega", new_nota_entrega_path %></li>
+							<li><%= link_to "Nota de devolucion", new_nota_devolucion_path %></li>
+							<li><%= link_to "Ventas", "/ventas" %></li>
+							<li><%= link_to "Productos", productos_path %></li>
+							<li><%= link_to "Cuotas", cuota_path %></li>
+							<li><%= link_to "Repartir cuotas", repartir_path %></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- end #sidebar -->
+			<% end %>
+			<% if soyReferenciacion %>
+			<div id="sidebar">
+				<ul>
+					<li>
+						<h2>Menú</h2>
+						<ul>
+							<li><%= link_to "Ingresar pedido", new_pedido_path %></li>
+							<li><%= link_to "Ver pedidos", pedidos_path %></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- end #sidebar -->
+			<% end %>
+			<% if soyAsistente %>
+			<div id="sidebar">
+				<ul>
+					<li>
+						<h2>Menú</h2>
+						<ul>
+							<li><%= link_to "Pedidos", pedidos_path %></li>
+							<li><%= link_to "Validar cuotas", cuota_path %></li>
+							<li><%= link_to "Repartir cuotas", repartir_path %></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- end #sidebar -->
+			<% end %>
+			<% if soyCobranza %>
+			<div id="sidebar">
+				<ul>
+					<li>
+						<h2>Menú</h2>
+						<ul>
+							<li><%= link_to "Mis cuotas", cuota_path %></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- end #sidebar -->
+			<% end %>
+			<% end %>
+			<div style="clear: both;">&nbsp;</div>
+		</div>
+		<!-- end #page -->
+	</div>
+</div>
+<div id="footer-bgcontent">
+	<div id="footer">
+		<p>yuhC</p>
+	</div>
+	<!-- end #footer -->
+</div>
+
+</body>
+
+</html>

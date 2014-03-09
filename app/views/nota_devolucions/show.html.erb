@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @nota_devolucion.fecha %>
+</p>
+
+<p>
+  <b>Numero:</b>
+  <%= @nota_devolucion.numero %>
+</p>
+
+<p>
+  <b>Transito:</b>
+  <%= @nota_devolucion.transito.nombre %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @nota_devolucion.cantidad %>
+</p>
+
+
+<%= link_to 'Editar', edit_nota_devolucion_path(@nota_devolucion) %> |
+<%= link_to 'Atras', nota_devolucions_path %>

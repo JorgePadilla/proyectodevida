@@ -1,0 +1,58 @@
+<h1>Listado de Cuotas</h1>
+<br/>
+
+<table>
+  <tr>
+    <th>Pedido id</th>
+    <th>Número Pedido</th>
+    <th>Número de Cuota</th>
+    <th>Gestor de Cobro</th>
+    <th>Observaciones</th>
+    <th></th>
+  </tr>
+
+<% if soyAsistente || soyAdministrador %>
+<% @cuota.each do |cuotum| %>
+  <tr>
+    <td><%= cuotum.pedido_id %></td>
+    <td><%= cuotum.pedido.numero_pedido %></td>
+    <td><%= cuotum.num_cuota %></td>
+    <td>
+    <% if cuotum.usuario %>
+      <%= cuotum.usuario.nombre %>
+    <%end%>
+    </td>
+    <td><%= cuotum.observaciones %></td>
+    <td><%= link_to 'Mostrar', cuotum %></td>
+    <td><%= link_to 'Editar', edit_cuotum_path(cuotum) %></td>
+    <% if soyAdministrador %>
+    <td><%= link_to 'Eliminar', cuotum, confirm: 'Esta seguro?', method: :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+<% end %>
+
+<% if soyCobranza %>
+<% Cuotum.where(:usuario_id=>current_user.id).each do |cuotum| %>
+  <tr>
+    <td><%= cuotum.pedido.numero_pedido %></td>
+    <td><%= cuotum.num_cuota %></td>
+    <td>
+    <% if cuotum.usuario %>
+      <%= cuotum.usuario.nombre %>
+    <%end%>
+    </td>
+    <td><%= cuotum.observaciones %></td>
+    <td><%= link_to 'Mostrar', cuotum %></td>
+    <td><%= link_to 'Editar', edit_cuotum_path(cuotum) %></td>
+    <% if soyAdministrador %>
+    <td><%= link_to 'Eliminar', cuotum, confirm: 'Esta seguro?', method: :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Cuota', new_cuotum_path %>

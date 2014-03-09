@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Producto:</b>
+  <%= @inventario.producto.nombre %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @inventario.cantidad %>
+</p>
+
+
+<%= link_to 'Editar', edit_inventario_path(@inventario) %> |
+<%= link_to_function "Atrás", "history.back()" %>

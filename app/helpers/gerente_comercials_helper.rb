@@ -1,0 +1,2 @@
+module GerenteComercialsHelper
+end

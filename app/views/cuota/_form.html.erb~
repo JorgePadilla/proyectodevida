@@ -1,0 +1,132 @@
+<%= form_for(@cuotum) do |f| %>
+  <% if @cuotum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cuotum.errors.count, "error") %> prohibited this cuotum from being saved:</h2>
+
+      <ul>
+      <% @cuotum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table border="1">
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label :fecha %><br />
+    <%= f.date_select :fecha %>
+  </div>
+  </div>
+  </td>
+
+  <td>
+    <div class="field">
+    <%= f.label "Valor Cuota" %><br />
+    <%= f.number_field :valor , :value => 0 %>
+  </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Valor Crédito" %><br />
+    <%= f.number_field :valor_credito %>
+  </div>
+  </div>
+  </td>
+</tr> 
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label "Número Depósito" %><br />
+    <%= f.text_field :num_deposito %>
+    </div>
+  </td>
+  
+  <td>
+    <div class="field">
+    <%= f.label "Valor Depósito" %><br />
+    <%= f.number_field :valor_deposito , :value => 0 %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+      <%= f.label "Mora" %><br />
+      <%= f.number_field :mora , :value => 0 %>
+    </div>
+  </td>
+</tr> 
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label "Descuento" %><br />
+    <%= f.number_field :descuento %>
+    </div>
+  </td>
+
+  <td>
+    <div class="field">
+    <%= f.label "Saldo" %><br />
+    <%= f.number_field :saldo %>
+  </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Número de Cuota" %><br />
+    <%= f.select :num_cuota , [1,2,3,4,5,6] %>
+  </div>
+  </td>	
+</tr>
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label :estado %><br />
+    <%= f.select :estado , ["Pagado","Ilocalizable"] %>
+    </div>
+  </td>
+<% if soyAsistente || soyAdministrador %>
+  <td>
+    <div class="field">
+    <%= f.label "Gestor de Cobro" %><br />
+    <!-- Cambio de Ahmed -->
+    <%= f.collection_select :usuario_id, usuariosCobranza, :id, :nombre %>
+    </div>
+  </td>
+  <td>
+    <div class="field">
+    <%= f.label "Información Revisada" %><br />
+    <%= f.check_box :revisado %>
+  </div>
+  </td>
+<% end %>
+</tr>
+
+<tr>
+  <td>
+    <div class="field">
+    <%= f.label :observaciones %><br />
+    <%= f.text_area :observaciones %>
+  </div>
+  </td>	
+  <td>
+    <div class="field">
+    <%= f.label "Número de Pedido" %><br />
+    <%= f.collection_select :pedido_id,Pedido.all,:id,:numero_pedido %>
+  </div>
+  </td>
+</tr>
+
+<tr>
+  <td>
+   <div class="actions">
+    <%= f.submit %>
+  </div>
+  </td>
+</tr> 
+</table>
+
+<% end %>

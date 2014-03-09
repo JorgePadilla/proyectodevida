@@ -1,0 +1,37 @@
+<%= form_for(@transito) do |f| %>
+  <% if @transito.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transito.errors.count, "error") %> prohibited this transito from being saved:</h2>
+
+      <ul>
+      <% @transito.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :producto_en_inventario %><br />
+    <%= f.collection_select :inventario_id, Inventario.all, :id, :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :asesor_id %><br />
+    <%= f.collection_select :asesor_id, Asesor.all, :id, :nombre %>
+  </div>
+  <% if @transito.cantidad==nil %>
+  <div class="field">
+    <%= f.label :cantidad %><br />
+    <%= f.number_field :cantidad, :min=>0, :value=>0 %>
+  </div>
+  <% else %>
+  <div class="field">
+    Cantidad:<br />
+    <%= f.number_field :cantidad%>
+  </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

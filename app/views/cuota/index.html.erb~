@@ -1,0 +1,27 @@
+<h1>Listado de Cuotas</h1>
+
+<table>
+  <tr>
+    <th>Número Pedido</th>
+    <th>Número de Cuota</th>
+    <th>Gestor de Cobro</th>
+    <th>Observaciones</th>
+    <th></th>
+  </tr>
+
+<% @cuota.each do |cuotum| %>
+  <tr>
+    <td><%= cuotum.pedido_id %></td>
+    <td><%= cuotum.num_cuota %></td>
+    <td><%= cuotum.usuario.nombre %></td>
+    <td><%= cuotum.observaciones %></td>
+    <td><%= link_to 'Mostrar', cuotum %></td>
+    <td><%= link_to 'Editar', edit_cuotum_path(cuotum) %></td>
+    <td><%= link_to 'Eliminar', cuotum, confirm: 'Esta seguro?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Cuota', new_cuotum_path %>

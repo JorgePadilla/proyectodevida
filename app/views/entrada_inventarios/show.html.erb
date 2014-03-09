@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Numero:</b>
+  <%= @entrada_inventario.numero %>
+</p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @entrada_inventario.fecha %>
+</p>
+
+<p>
+  <b>Inventario:</b>
+  <%= @entrada_inventario.inventario_id %>
+</p>
+
+<p>
+  <b>Proveedor:</b>
+  <%= @entrada_inventario.proveedor %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @entrada_inventario.cantidad %>
+</p>
+
+<p>
+  <b>Valor unitario:</b>
+  <%= @entrada_inventario.valor_unitario %>
+</p>
+
+<p>
+  <b>Valor unitario dolares:</b>
+  <%= @entrada_inventario.valor_unitario_dolares %>
+</p>
+
+
+<%= link_to 'Edit', edit_entrada_inventario_path(@entrada_inventario) %> |
+<%= link_to 'Back', entrada_inventarios_path %>

@@ -1,0 +1,101 @@
+<p id="notice"><%= notice %></p>
+
+<table border="1">
+  <tr>
+    <td>
+      <p>
+        <b>Fecha Cuota:</b>
+	<%= @cuotum.fecha %>
+      </p>
+    </td>
+    
+    <td>
+      <p>
+	<b>Valor de Cuota:</b>
+	<%= @cuotum.valor %>
+      </p>
+    </td>
+    
+    <td>
+      <p>
+	<b>Valor de Crédito:</b>
+	<%= @cuotum.valor_credito %>
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p>
+	<b>Número Depósito</b>
+	<%= @cuotum.num_deposito %>
+      </p>
+    </td>
+    <td>
+      <p>
+	<b>Valor Depósito</b>
+	<%= @cuotum.valor_deposito %>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>
+	<b>Mora</b>
+	<%= @cuotum.mora %>
+      </p>
+    </td>
+    <td>
+      <p>
+	<b>Descuento</b>
+	<%= @cuotum.descuento %>
+      </p>
+    </td>
+    <td>
+      <p>
+	<b>Saldo</b>
+	<%= @cuotum.saldo %>
+      </p>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <p>
+	<b>Liquidado</b>
+	<% @cuotum.liquidado  %>
+      </p>
+    </td>
+    <td>
+      <p>
+	<b>Observaciones</b>
+	<%= @cuotum.observaciones %>
+      </p>
+    </td>
+    <td>
+      <p>
+	<b>Estado de la Cuota</b>
+	<%= @cuotum.estado%>
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p>
+	<b>Gestor de Cobro</b>
+	<% user = Usuario.find(@cuotum.usuario_id) %>
+	<%= user.nombre %>
+      </p>
+    </td>
+    <td>
+      <p>
+	<b>Información Revisada</b>
+	<%= @cuotum.revisado %>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<%= link_to 'Edit', edit_cuotum_path(@cuotum) %> |
+<%= link_to 'Back', cuota_path %>

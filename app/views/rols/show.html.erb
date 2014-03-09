@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @rol.nombre %>
+</p>
+
+
+<%= link_to 'Edit', edit_rol_path(@rol) %> |
+<%= link_to_function "Atrás", "history.back()" %>

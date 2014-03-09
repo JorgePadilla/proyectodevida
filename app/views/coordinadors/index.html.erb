@@ -1,0 +1,29 @@
+<h1>Coordinadores</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Director comercial</th>
+    <th>Comision credito(%)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @coordinadors.each do |coordinador| %>
+  <tr>
+    <td><%= coordinador.nombre %></td>
+    <td><%= coordinador.director_comercial_id %></td>
+    <td><%= coordinador.comision_credito %></td>
+    <td><%= link_to 'Mostrar', coordinador %></td>
+    <td><%= link_to 'Editar', edit_coordinador_path(coordinador) %></td>
+    <td><%= link_to 'Eliminar', coordinador, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Coordinador', new_coordinador_path %>

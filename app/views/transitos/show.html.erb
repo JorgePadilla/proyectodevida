@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Producto en inventario:</b>
+  <%= @transito.inventario.nombre %>
+</p>
+
+<p>
+  <b>Asesor:</b>
+  <%= link_to @transito.asesor.nombre, @transito.asesor %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @transito.cantidad %>
+</p>
+
+
+<%= link_to 'Editar', edit_transito_path(@transito) %> |
+<%= link_to_function "Atrás", "history.back()" %>

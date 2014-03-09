@@ -1,0 +1,36 @@
+<h1>Entradas a inventario</h1>
+<br/>
+
+<table>
+  <tr>
+    <th>Numero</th>
+    <th>Fecha</th>
+    <th>Inventario</th>
+    <th>Proveedor</th>
+    <th>Cantidad</th>
+    <th>Valor unitario</th>
+    <th>Valor unitario dolares</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entrada_inventarios.each do |entrada_inventario| %>
+  <tr>
+    <td><%= entrada_inventario.numero %></td>
+    <td><%= entrada_inventario.fecha %></td>
+    <td><%= entrada_inventario.inventario.nombre %></td>
+    <td><%= entrada_inventario.proveedor %></td>
+    <td><%= entrada_inventario.cantidad %></td>
+    <td><%= entrada_inventario.valor_unitario %></td>
+    <td><%= entrada_inventario.valor_unitario_dolares %></td>
+    <td><%= link_to 'Mostrar', entrada_inventario %></td>
+    <td><%= link_to 'Editar', edit_entrada_inventario_path(entrada_inventario) %></td>
+    <td><%= link_to 'Borrar', entrada_inventario, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Entrada a inventario', new_entrada_inventario_path %>

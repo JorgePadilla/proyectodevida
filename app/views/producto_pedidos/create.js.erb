@@ -1,0 +1,5 @@
+$('#new_producto_pedido input[type="text"]').val("");
+var vista="<%= escape_javascript(render(@producto_pedido))%>";
+
+$('#producto_pedido_tabla').append(vista);
+$('#producto_pedido_tabla #pr12').delay(500).fadeIn();

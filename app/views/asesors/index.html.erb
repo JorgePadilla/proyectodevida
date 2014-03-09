@@ -1,0 +1,35 @@
+<h1>Asesores</h1>
+
+<br/>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Identidad</th>
+    <th>Moderador</th>
+    <th>Comision credito(%)</th>
+    <th>Comision contado empresa(%)</th>
+    <th>Comision contado asesor(%)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% Asesor.all.each do |asesor| %>
+  <tr>
+    <td><%= asesor.nombre %></td>
+    <td><%= asesor.identidad %></td>
+    <td><%= asesor.moderador_id %></td>
+    <td><%= asesor.comision_credito %></td>
+    <td><%= asesor.comision_contado_empresa %></td>
+    <td><%= asesor.comision_contado_asesor %></td>
+    <td><%= link_to 'Mostrar', asesor %></td>
+    <td><%= link_to 'Editar', edit_asesor_path(asesor) %></td>
+    <td><%= link_to 'Destruir', asesor, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Asesor', new_asesor_path %>

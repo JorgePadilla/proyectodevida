@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  producto_id: 1
+  fecha_ingreso: 2012-06-05
+  documento_ingreso: MyString
+  cantidad_ingreso: 1
+  valor_producto: 1.5
+
+two:
+  producto_id: 1
+  fecha_ingreso: 2012-06-05
+  documento_ingreso: MyString
+  cantidad_ingreso: 1
+  valor_producto: 1.5

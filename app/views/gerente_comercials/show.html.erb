@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @gerente_comercial.nombre %>
+</p>
+
+<p>
+  <b>Comision credito(%):</b>
+  <%= @gerente_comercial.comision_credito %>
+</p>
+
+
+<%= link_to 'Editar', edit_gerente_comercial_path(@gerente_comercial) %> |
+<%= link_to 'Atrás', gerente_comercials_path %>

@@ -1,0 +1,298 @@
+<h1>Repartir Cuotas</h1>
+<br/>
+
+<%= form_tag buscar_cuotas_path do %>
+<table>
+  <tr>
+    <td>
+      <b>Fecha de inicio:</b>
+    </td>
+    <td>
+
+      <select name="anio_inicio">
+        <option value="<%= Time.now.year %>"><%= Time.now.year %></option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+      </select>
+
+      <select name="mes_inicio">
+        <option value="<%= Time.now.month %>"><%= getMesString Time.now.month %></option>
+        <option value="01">Enero</option>
+        <option value="02">Febrero</option>
+        <option value="03">Marzo</option>
+        <option value="04">Abril</option>
+        <option value="05">Mayo</option>
+        <option value="06">Junio</option>
+        <option value="07">Julio</option>
+        <option value="08">Agosto</option>
+        <option value="09">Septiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+
+      <select name="dia_inicio">
+        <option value="<%= Time.now.day %>"><%= Time.now.day %></option>
+        <option value="01" selected="selected">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Fecha final:</b>
+    </td>
+    <td>
+
+      <select name="anio_final">
+        <option value="<%= Time.now.year %>"><%= Time.now.year %></option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+      </select>
+
+      <select name="mes_final">
+        <option value="<%= Time.now.month %>"><%= getMesString Time.now.month %></option>
+        <option value="01">Enero</option>
+        <option value="02">Febrero</option>
+        <option value="03">Marzo</option>
+        <option value="04">Abril</option>
+        <option value="05">Mayo</option>
+        <option value="06">Junio</option>
+        <option value="07">Julio</option>
+        <option value="08">Agosto</option>
+        <option value="09">Septiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+
+      <select name="dia_final">
+        <option value="<%= Time.now.day %>"><%= Time.now.day %></option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+        <option value="07">07</option>
+        <option value="08">08</option>
+        <option value="09">09</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31" selected="selected">31</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <%= submit_tag "Buscar Cuotas" %>
+    </td>
+    <td>
+    </td>
+  </tr>
+</table>
+<%end%>
+
+</br>
+
+<%= form_tag reparticion_path do %>
+<table>
+
+  <tr>
+    <td>
+      <b>Cuota</b>
+    </td>
+    <td>
+      <b>Cantidad sin asignar</b>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <center>n°1</center>
+    </td>
+    <td>
+      <center><%=@cuota_pendiente[1]%></center>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <center>n°2</center>
+    </td>
+    <td>
+      <center><%=@cuota_pendiente[2]%></center>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <center>n°3</center>
+    </td>
+    <td>
+      <center><%=@cuota_pendiente[3]%></center>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <center>n°4</center>
+    </td>
+    <td>
+      <center><%=@cuota_pendiente[4]%></center>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <center>n°5</center>
+    </td>
+    <td>
+      <center><%=@cuota_pendiente[5]%></center>
+    </td>
+  <tr>
+
+  <tr>
+    <td>
+      <center>n°6</center>
+    </td>
+    <td>
+      <center><%=@cuota_pendiente[6]%></center>
+    </td>
+  <tr>
+
+</table>
+
+</br>
+
+<table>
+  <tr>
+    <td>
+      <b>Gestor de cobro:</b>
+    </td>
+    <td>
+      <%= collection_select(:gestor_de_cobro,@asdf, Usuario.where(:rol_id=>4), :id, :nombre) %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 1:</b>
+    </td>
+    <td>
+      <%= number_field_tag :cuota_1, params[:cuota_1], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 2:</b>
+    </td>
+    <td>
+      <%= number_field_tag :cuota_2, params[:cuota_2], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 3:</b>
+    </td>
+    <td>
+      <%= number_field_tag :cuota_3, params[:cuota_3], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 4:</b>
+    </td>
+    <td>
+      <%= number_field_tag :cuota_4, params[:cuota_4], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 5:</b>
+    </td>
+    <td>
+      <%= number_field_tag :cuota_5, params[:cuota_5], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <b>Asignar cuota 6:</b>
+    </td>
+    <td>
+      <%= number_field_tag :cuota_6, params[:cuota_6], :value=>0, :min=>0 %>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <%= submit_tag "Asignar" %>
+    </td>
+    <td>
+    </td>
+  </tr>
+</table>
+<%end%>

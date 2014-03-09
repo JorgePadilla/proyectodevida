@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fecha:</b>
+  <%= @nota_entrega.fecha %>
+</p>
+
+<p>
+  <b>Numero:</b>
+  <%= @nota_entrega.numero %>
+</p>
+
+<p>
+  <b>Transito:</b>
+  <%= @nota_entrega.transito.nombre %>
+</p>
+
+<p>
+  <b>Cantidad:</b>
+  <%= @nota_entrega.cantidad %>
+</p>
+
+
+<%= link_to 'Editar', edit_nota_entrega_path(@nota_entrega) %> |
+<%= link_to 'Atras', nota_entregas_path %>

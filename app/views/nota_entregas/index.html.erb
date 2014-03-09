@@ -1,0 +1,26 @@
+<h1>Nota de entregas</h1>
+<br/>
+
+<table>
+  <tr>
+    <th>Fecha</th>
+    <th>Numero</th>
+    <th>Transito</th>
+    <th>Cantidad</th>
+  </tr>
+
+<% @nota_entregas.each do |nota_entrega| %>
+  <tr>
+    <td><%= nota_entrega.fecha %></td>
+    <td><%= nota_entrega.numero %></td>
+    <td><%= nota_entrega.transito.nombre %></td>
+    <td><%= nota_entrega.cantidad %></td>
+    <td><%= link_to 'Mostrar', nota_entrega %></td>
+    <td><%= link_to 'Eliminar', nota_entrega, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Nota entrega', new_nota_entrega_path %>
